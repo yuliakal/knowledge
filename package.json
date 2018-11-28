@@ -1,0 +1,58 @@
+{
+  "name": "yeahcoach",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server/index.ts",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "NODE_ENV=production node production-server/index.ts",
+    "now": "now && now alias && now rm yeahcoach --safe --yes",
+    "lint": "tslint components pages lib server",
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "coverageDirectory": "./.coverage"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.0",
+    "@material-ui/icons": "^3.0.1",
+    "@zeit/next-css": "^1.0.0",
+    "@zeit/next-typescript": "^1.1.0",
+    "color": "^3.0.0",
+    "express": "^4.16.3",
+    "helmet": "^3.15.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "lodash": "^4.17.10",
+    "next": "^7.0.2",
+    "react": "^16.4.1",
+    "react-circular-progressbar": "^1.0.0",
+    "react-content-loader": "^3.2.0",
+    "react-dom": "^16.4.1",
+    "react-jss": "^8.6.0",
+    "typescript": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/helmet": "^0.0.42",
+    "@types/lodash": "^4.14.109",
+    "@types/material-ui": "^0.21.3",
+    "@types/next": "^7.0.0",
+    "@types/node": "^10.11.4",
+    "@types/nprogress": "^0.0.29",
+    "@types/react": "^16.4.5",
+    "@types/react-content-loader": "^3.1.3",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-jss": "^8.6.0",
+    "babel-eslint": "^10.0.0",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.2.0",
+    "nodemon": "^1.17.5",
+    "remote-redux-devtools": "^0.5.13",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.10.0"
+  }
+}

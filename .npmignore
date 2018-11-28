@@ -1,0 +1,20 @@
+.gitignore
+
+# IDE
+.vscode/
+
+# BUILD
+.build/
+
+# MARKDOWN
+tos.md
+README.md
+
+# ENV
+.coverage
+.env
+.eslintrc.js
+.next/
+node_modules/
+test
+
