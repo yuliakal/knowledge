@@ -45,6 +45,7 @@ export enum ViewLayout {
  */
 export enum Coloring {
   Blue = 'blue',
+  Red = 'red',
   Purple = 'purple',
   Pink = 'pink',
   Green = 'green',
@@ -52,6 +53,7 @@ export enum Coloring {
   Black = 'black',
   // dark coloring
   BlueDark = 'blue-dark',
+  RedDark = 'red-dark',
   PurpleDark = 'purple-dark',
   PinkDark = 'pink-dark',
   GreenDark = 'green-dark',
@@ -79,7 +81,6 @@ export type ImprintFormat = {
   id: number;
   type: string;
 };
-
 
 /**
  * IMPRINT FORMAT

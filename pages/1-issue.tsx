@@ -2,9 +2,10 @@ import { GenericPreview, ToolsPreview, ToolsTabs } from 'components';
 import { createLayout, LayoutInjectedProps } from 'containers';
 import Head from 'next/head';
 import React from 'react';
-import Link from 'next/link';
-import { WithStyles } from '@material-ui/core';
 import { PageIndexStyleRules, PageIndexStyles } from 'theme';
+import { Typography, WithStyles } from '@material-ui/core';
+import { Coloring } from 'lib/types';
+import { FavoriteRounded } from '@material-ui/icons';
 
 /**
  * PAGE INDEX PROPS
@@ -36,18 +37,20 @@ class Index extends React.Component<IndexProps> {
           <link rel="stylesheet" href="/static/css/pages/page.index.css" />
         </Head>
 
-        <ol>
-          <li>
-            <Link href="/1-issue" passHref>
-              <a>#1 ISSUE - ToolsTabs component & ToolsPreview component</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/2-issue" passHref>
-              <a>#2 ISSUE - ToolsTabs component & ToolsPreview component</a>
-            </Link>
-          </li>
-        </ol>
+        <Typography variant="h1">Tools Tabs</Typography>
+        <ToolsTabs />
+
+        <Typography variant="h1">Tools Preview</Typography>
+        <ToolsPreview />
+
+        <Typography variant="h1">Example ResourcePreview component</Typography>
+        <GenericPreview
+          cover="/static/img/entries/fun_01.jpg"
+          title="Example title"
+          purpose="Example"
+          coloring={Coloring.Pink}
+          pictogram={FavoriteRounded}
+        />
       </div>
     );
   }

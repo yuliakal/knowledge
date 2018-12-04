@@ -1,9 +1,12 @@
-import { GenericPreview, ToolsPreview, ToolsTabs } from 'components';
+import { Typography, WithStyles } from '@material-ui/core';
+import { FavoriteRounded } from '@material-ui/icons';
+import {
+  GenericPreview, ToolsPreview, ToolsTabs, Button,
+} from 'components';
 import { createLayout, LayoutInjectedProps } from 'containers';
+import { Coloring } from 'lib/types';
 import Head from 'next/head';
 import React from 'react';
-import Link from 'next/link';
-import { WithStyles } from '@material-ui/core';
 import { PageIndexStyleRules, PageIndexStyles } from 'theme';
 
 /**
@@ -36,18 +39,9 @@ class Index extends React.Component<IndexProps> {
           <link rel="stylesheet" href="/static/css/pages/page.index.css" />
         </Head>
 
-        <ol>
-          <li>
-            <Link href="/1-issue" passHref>
-              <a>#1 ISSUE - ToolsTabs component & ToolsPreview component</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/2-issue" passHref>
-              <a>#2 ISSUE - ToolsTabs component & ToolsPreview component</a>
-            </Link>
-          </li>
-        </ol>
+        <div>Adapting HOC based on Props</div>
+        <Button color={Coloring.Red}>Red Button</Button>
+        <Button color={Coloring.Blue}>Blue Button</Button>
       </div>
     );
   }
