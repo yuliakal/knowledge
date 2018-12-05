@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography/Typography";
  * TOOLS PREVIEW PROPS type
  */
 type ToolsPreviewProps = {
-  tileData: Array<string>;
+  images: Array<string>;
   description: string;
 };
 
@@ -18,13 +18,13 @@ type ToolsPreviewProps = {
  * TOOLS PREVIEW component
  */
 const ToolsPreview: React.SFC<ToolsPreviewProps & WithStyles> = (props) => {
-  const { classes, tileData, description } = props;
+  const { classes, images, description } = props;
 
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList}>
-        {tileData.map((tile: string) => (
-          <img className={classes.image} src={tile} />
+        {images.map((image: string) => (
+          <img className={classes.image} src={image} />
         ))}
       </GridList>
       <Typography component="div" className={classes.description}>
