@@ -53,7 +53,7 @@ class Index extends React.Component<IndexProps> {
         <ToolsTabs onChange={this.onChange} />
 
         <Typography variant="h1">Tools Preview</Typography>
-        <ToolsPreview images={mockResponse[value].tileData} description={mockResponse[value].description} />
+        <ToolsPreview images={mockResponse[value].images} description={mockResponse[value].description} />
 
         <Typography variant="h1">Example ResourcePreview component</Typography>
         <GenericPreview
