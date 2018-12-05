@@ -1,10 +1,9 @@
 import React from 'react';
 import { WithStyles } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 
-import styles from './ToolsPreviewStyle';
 import Typography from "@material-ui/core/Typography/Typography";
+import { createTheme, ToolsPreviewStyles, ToolsPreviewStyleRules } from "theme";
 
 /**
  * TOOLS PREVIEW PROPS type
@@ -12,12 +11,12 @@ import Typography from "@material-ui/core/Typography/Typography";
 type ToolsPreviewProps = {
   images: Array<string>;
   description: string;
-};
+} & WithStyles<ToolsPreviewStyleRules>;
 
 /**
  * TOOLS PREVIEW component
  */
-const ToolsPreview: React.SFC<ToolsPreviewProps & WithStyles> = (props) => {
+const ToolsPreview: React.SFC<ToolsPreviewProps> = (props) => {
   const { classes, images, description } = props;
 
   return (
@@ -34,8 +33,12 @@ const ToolsPreview: React.SFC<ToolsPreviewProps & WithStyles> = (props) => {
   );
 };
 
-// STYLEs
-const Component = withStyles(styles)(ToolsPreview);
+// THEME
+const withTheme = createTheme(ToolsPreviewStyles);
+const Component = withTheme(ToolsPreview);
 
-// EXPORTs
-export { Component as ToolsPreview };
+// EXPORTS
+export {
+  Component as ToolsPreview,
+  ToolsPreviewProps,
+};

@@ -63,6 +63,12 @@ export {
   PreviewPictogramStyleRules,
 } from './v1/components/Resource/Preview/PreviewStyles';
 
+// ENTRY TOOLSPREVIEW
+export {
+  ToolsPreviewStyles,
+  ToolsPreviewStyleRules,
+} from './v1/components/Resource/ToolsPreview/ToolsPreviewStyles';
+
 // ENTRY DETAIL
 export { DetailStyles, DetailStyleRules } from './v1/components/Resource/Detail/DetailStyles';
 export {
