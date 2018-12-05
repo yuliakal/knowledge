@@ -7,6 +7,8 @@ import { Typography, WithStyles } from '@material-ui/core';
 import { Coloring } from 'lib/types';
 import { FavoriteRounded } from '@material-ui/icons';
 
+import mockResponse from './mock_response';
+
 /**
  * PAGE INDEX PROPS
  */
@@ -21,12 +23,22 @@ type IndexProps = WithStyles<PageIndexStyleRules>;
  * @version 1.0
  * @namespace pages
  */
+
 class Index extends React.Component<IndexProps> {
+  public state = {
+    value: 0,
+  };
+
+  onChange = (value: number) => {
+    this.setState({ value });
+  };
+
   /**
    * Render method
    */
   render() {
     const { classes } = this.props;
+    const { value } = this.state;
 
     /**
      * Render method
@@ -38,10 +50,10 @@ class Index extends React.Component<IndexProps> {
         </Head>
 
         <Typography variant="h1">Tools Tabs</Typography>
-        <ToolsTabs />
+        <ToolsTabs onChange={this.onChange} />
 
         <Typography variant="h1">Tools Preview</Typography>
-        <ToolsPreview />
+        <ToolsPreview tileData={mockResponse[value].tileData} description={mockResponse[value].description} />
 
         <Typography variant="h1">Example ResourcePreview component</Typography>
         <GenericPreview
