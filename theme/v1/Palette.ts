@@ -15,6 +15,8 @@ export interface ThemeColors {
   white: CustomPaletteColorOptions;
   shade: CustomPaletteColorOptions;
   night: CustomPaletteColorOptions;
+  brown: CustomPaletteColorOptions;
+  sienna: CustomPaletteColorOptions;
 }
 
 // color options
@@ -26,6 +28,7 @@ export interface CustomPaletteColorOptions extends SimplePaletteColorOptions {
 export interface SimplePaletteGradientOptions {
   main: string;
   dark: string;
+  light?: string;
 }
 
 // available gradients
@@ -86,6 +89,13 @@ export const Colors: ThemeColors = {
     mid: '#f6af39',
     dark: '#7a5211',
   },
+  brown: {
+    main: '#f5a623',
+    mid: '#7a5211',
+  },
+  sienna: {
+    main: '#ab7318',
+  },
   grey: {
     main: '#767676',
     light: '#f6f6f6',
@@ -133,6 +143,7 @@ export const Gradients: ThemeGradientGenerator = (direction = Direction.Right) =
   orange: {
     main: `linear-gradient(to ${direction}, ${Colors.orange.main}, #fbd249)`,
     dark: `linear-gradient(to ${direction}, #dc951f, #f0c742)`,
+    light: `linear-gradient(to ${direction}, #fbd249, ${Colors.orange.main})`,
   },
   purple: {
     main: `linear-gradient(to ${direction}, ${Colors.purple.main}, #c0bdff)`,

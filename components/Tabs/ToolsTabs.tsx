@@ -1,20 +1,18 @@
 import React from 'react';
 import { WithStyles } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-
-import styles from './ToolsTabsStyle';
+import {createTheme, ToolsTabsStyles, ToolsTabsStyleRules} from "theme";
 
 type ToolsTabsProps = {
   onChange: (value: number) => void;
-};
+} & WithStyles<ToolsTabsStyleRules>;
 
 // TODO: Move constants to suitable global constant file.
 const tabItems = ['who I am', 'values', 'gratitude', 'goals', 'achievements', 'vision'];
 
-class ToolsTabs extends React.Component<ToolsTabsProps & WithStyles> {
+class ToolsTabs extends React.Component<ToolsTabsProps> {
   public state = {
     value: 0,
   };
@@ -63,8 +61,12 @@ class ToolsTabs extends React.Component<ToolsTabsProps & WithStyles> {
   }
 }
 
-// STYLEs
-const Component = withStyles(styles)(ToolsTabs);
+// THEME
+const withTheme = createTheme(ToolsTabsStyles);
+const Component = withTheme(ToolsTabs);
 
-// EXPORTs
-export { Component as ToolsTabs };
+// EXPORTS
+export {
+  Component as ToolsTabs,
+  ToolsTabsProps,
+};

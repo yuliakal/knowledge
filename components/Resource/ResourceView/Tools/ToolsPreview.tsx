@@ -1,7 +1,6 @@
 import React from 'react';
 import { WithStyles } from '@material-ui/core';
 import GridList from '@material-ui/core/GridList';
-
 import Typography from "@material-ui/core/Typography/Typography";
 import { createTheme, ToolsPreviewStyles, ToolsPreviewStyleRules } from "theme";
 

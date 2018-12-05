@@ -69,6 +69,12 @@ export {
   ToolsPreviewStyleRules,
 } from './v1/components/Resource/ToolsPreview/ToolsPreviewStyles';
 
+// ENTRY TOOLSTABS
+export {
+  ToolsTabsStyles,
+  ToolsTabsStyleRules,
+} from './v1/components/Tabs/ToolsTabsStyles';
+
 // ENTRY DETAIL
 export { DetailStyles, DetailStyleRules } from './v1/components/Resource/Detail/DetailStyles';
 export {
